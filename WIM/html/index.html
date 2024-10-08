@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khana Khajana</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="navbar">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about" class="nav-item">About Us</a>
+            <a href="#menu" class="nav-item">Menu</a>
+            <a href="form.html" class="nav-item">Survey</a>
+            <a href="dummy.html" class="nav-item">View Data</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <h1>Welcome to Khana Khajana!</h1>
+        <p>Experience the finest cuisine in the heart of the city.</p>
+    </section>
+
+    <section class="menu" id="menu">
+        <table>
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pizza</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Burger</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Pasta</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Food1</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Food2</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Food3</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Food4</td>
+                    <td>Rs. 450</td>
+                </tr>
+                <tr>
+                    <td>Food5</td>
+                    <td>Rs. 450</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>
+            Our restaurant has been serving delicious food for over 5 years.
+            We love our folks and people, will keep lickin their fingers for our food.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Our Restaurant. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch('http://localhost:3000/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+
+    </script>
+</body>
+
+</html>

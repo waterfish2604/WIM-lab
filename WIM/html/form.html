@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Khana Khajana Survey</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+
+<body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+  
+  <main>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve</p>
+    <div>
+      <form id="survey-form" action="" method="">
+        <fieldset>
+          <label id="name-label" class="field">Enter your name: <input name="name" id="name" placeholder="ex: Adam Cage"
+              required type="text" /></label>
+          <label id="email-label" class="field">Enter your email: <input name="email" id="email"
+              placeholder="ex: adamcage@xyz.com" required type="email" /></label>
+          <label id="number-label" class="field">Enter your age: <input name="age" id="age" placeholder="ex: 21"
+              required type="number" min="20" max="105" /></label>
+          <label>What do you do?
+            <select required id="dropdown" name="occupation">
+              <option value="">choose one</option>
+              <option value="student">Student</option>
+              <option value="professional">Professional</option>
+              <option value="home-maker">Home-maker</option>
+              <option value="food-critic">Food Critic</option>
+              <option value="management">Management</option>
+              <option value="dns">Do not say</option>
+            </select>
+          </label>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <legend>Would you recommend us to your friends/colleagues? (required)</legend>
+          <label for="yes" class="side">Yes
+            <input value="Y" class="side" name="choice" id="yes" type="radio" />
+          </label>
+          <label class="side" for="no">No
+            <input value="N" class="side" name="choice" id="no" type="radio" />
+          </label>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <p class="like-about-us">What do you like about us?</p>
+
+          <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="like_about_us" value="Weekly Events" />Weekly Events
+          </label>
+
+          <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="like_about_us" value="Service" />Service
+          </label>
+
+          <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="like_about_us" value="Community" />Community
+          </label>
+
+          <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="like_about_us" value="Everything" />Everything
+          </label>
+
+          <label class="box" for="comments">
+            <p class="like-about-us">Comments/Suggestions:</p>
+            <textarea name="comments" placeholder="I would love if you guys would...." class="box" rows="3" cols="25" id="comments">
+              </textarea>
+          </label>
+        </fieldset>
+        <div class="submission">Form Submitted!</div>
+        <div class="submit-box">
+          <input id="submit" type="submit" />
+        </div>
+        
+      </form>
+      
+    </div>
+  </main>
+  <script src="../javascript/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+</body>
+
+</html>
